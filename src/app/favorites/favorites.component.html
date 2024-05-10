@@ -1,0 +1,34 @@
+<div>
+    <!--  
+  <h2>Your Favorites</h2>
+    <ul>
+      <li *ngFor="let favorite of favorites">{{ favorite }}</li>
+    </ul>
+  </div>-->
+     <!--  
+  <div *ngFor="let cocktailId of favorites"> 
+  </div>--> 
+  <div *ngIf="favorites.length > 0; else noFavorites">
+    <h2>Favorite Cocktails</h2>
+    <ul>
+      <li *ngFor="let cocktail of favorites">
+        <h4>{{ cocktail.drinkName }}</h4>
+        <p>Ingredients:</p>
+        <ul>
+          <li>{{ cocktail.ing1 }} - {{ cocktail.measure1 }}</li>
+          <li>{{ cocktail.ing2 }} - {{ cocktail.measure2 }}</li>
+          <li>{{ cocktail.ing3 }} - {{ cocktail.measure3 }}</li>
+        </ul>
+        <!-- Add a button to remove the cocktail from favorites -->
+        <button (click)="removeFromFavorites(cocktail._id)">Remove</button>
+      </li>
+    </ul>
+  </div>
+  
+  
+  
+  <ng-template #noFavorites>
+    <p>No favorite cocktails yet.</p>
+  </ng-template>
+
+  

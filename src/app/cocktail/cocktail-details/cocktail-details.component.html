@@ -1,0 +1,6 @@
+<h4>Ingredients</h4>
+<p>{{cocktail.ing1}}- {{cocktail.measure1}}</p>
+<p *ngIf="cocktail.ing2 != null">{{cocktail.ing2}}- {{cocktail.measure2}}</p>
+<p *ngIf="cocktail.ing3 != null">{{cocktail.ing3}}- {{cocktail.measure3}}</p>
+<h5 *ngIf="cocktail.instructions != null">Instructions</h5>
+<p *ngIf="cocktail.instructions != null">{{cocktail.instructions}}</p>
